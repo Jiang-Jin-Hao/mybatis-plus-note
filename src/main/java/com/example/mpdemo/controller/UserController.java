@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/user")
+@CrossOrigin // 第二种解决跨域问题的方法
 public class UserController {
 
     @Autowired
@@ -22,7 +23,7 @@ public class UserController {
         return userMapper.getAll();
     }*/
 
-    @GetMapping("/user")
+    @GetMapping()
     public List<User> queryAll() {
         return userMapper.selectList(null);
     }
